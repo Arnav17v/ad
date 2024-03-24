@@ -6,6 +6,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
 import {
   Drawer,
   DrawerClose,
@@ -58,7 +59,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="flex flex-col justify-center">
-        <img className="" src={"next2.svg"} alt={""}></img>
+        <Image src="/next2.svg" alt="" className="" />
       </div>
     </div>
   );

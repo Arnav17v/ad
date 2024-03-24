@@ -1,3 +1,4 @@
+"use client";
 import {
   DocumentData,
   collection,
@@ -10,7 +11,7 @@ import {
 import { useEffect, useState } from "react";
 import { auth, db } from "../firebase/config";
 
-const thisinter = () => {
+const Thisinter = () => {
   const [Interested, setInterested] = useState<DocumentData[]>([]);
   const [adreqs, setAdreqs] = useState<DocumentData[]>([]); // state to store the adreqs
   const [showInterested, setShowInterested] = useState(false); // state to control the visibility of the interested requests
@@ -100,4 +101,4 @@ const thisinter = () => {
   );
 };
 
-export default thisinter;
+export default Thisinter;

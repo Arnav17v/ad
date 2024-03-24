@@ -29,7 +29,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col justify-center">
-          <img className="" src={"next2.svg"} alt={""}></img>
+          <Image className="" src={"next2.svg"} alt={""} />
         </div>
       </article>
       <article className="max-w-[88rem] m-auto pb-12  bg-black" id="features">

@@ -235,7 +235,6 @@ const DashboardPage = () => {
                             ...prevInterest,
                             adreq.id,
                           ]);
-                          await addInterest();
                         }}
                       >
                         Add to Interest List
