@@ -71,6 +71,7 @@ const DashboardPage = () => {
   const [variable, setvariable] = useState(false);
   const [adreq, setadreq] = useState<AdReqType[]>([]);
   const router = useRouter();
+  const [isAdded, setIsAdded] = useState<{ [key: string]: boolean }>({});
   // const [email, setEmail] = useState("");
 
   const [userId, setUserId] = useState<string | null>(null);
@@ -118,6 +119,7 @@ const DashboardPage = () => {
             await updateDoc(userRef, {
               Interest: arrayUnion(adreqid),
             });
+            return true; // Interest was added
           }
         }
       } catch (err: any) {
@@ -126,6 +128,7 @@ const DashboardPage = () => {
     } else {
       console.log("userId is null");
     }
+    return false; // Interest was not added
   };
 
   async function getInterestedCount(adreqId: string): Promise<number> {
@@ -230,14 +233,17 @@ const DashboardPage = () => {
                       <Button
                         className="bg-[#111] border-none p-2 rounded-xl m-2"
                         variant="secondary"
+                        disabled={isAdded[adreq.id]} // Disable the button if the interest is already added
                         onClick={async () => {
-                          setInterest((prevInterest: any) => [
-                            ...prevInterest,
-                            adreq.id,
-                          ]);
+                          const wasAdded = await addInterest(adreq.id);
+                          setIsAdded((prevState) => ({
+                            ...prevState,
+                            [adreq.id]: wasAdded,
+                          }));
                         }}
                       >
-                        Add to Interest List
+                        {isAdded[adreq.id] ? "Added" : "Add to Interest List"}{" "}
+                        // Change the button text based on the isAdded state
                       </Button>
                     </SheetHeader>
                   </SheetContent>
