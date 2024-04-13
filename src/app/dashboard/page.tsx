@@ -258,6 +258,12 @@ const DashboardPage = () => {
                       <Button
                         className="bg-[#111] border-none p-2 rounded-xl m-2"
                         variant="secondary"
+                        onClick={async () => {
+                          setInterest((prevInterest: any) => [
+                            ...prevInterest,
+                            adreq.id,
+                          ]);
+                        }}
                       >
                         Add to Interest List
                       </Button>
