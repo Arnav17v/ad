@@ -56,7 +56,7 @@ const Header = () => {
               <button>Home</button>
             </div>
           </Link>
-          <div className={loggedIn ? "hidden" : "flex gap-5"}>
+          <div className={loggedIn ? "hidden" : "flex gap-5 flex-wrap"}>
             <button>
               <a href={"./signup"}>Signup</a>
             </button>
@@ -64,7 +64,7 @@ const Header = () => {
               <a href={"./signin"}>Signin</a>
             </button>
           </div>
-          <div className={loggedIn ? "flex gap-5" : "hidden"}>
+          <div className={loggedIn ? "flex gap-5 flex-wrap" : "hidden"}>
             <button
               onClick={async () => {
                 logout();
