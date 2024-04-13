@@ -58,9 +58,6 @@ const Footer = () => {
           <div className="m-auto"></div>
         </a>
       </div>
-      <div className="flex flex-col justify-center">
-        <Image src="/next2.svg" alt="" className="" />
-      </div>
     </div>
   );
 };

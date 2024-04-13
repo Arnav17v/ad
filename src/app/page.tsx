@@ -29,7 +29,13 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col justify-center">
-          <Image className="" src={"next2.svg"} alt={""} />
+          <Image
+            className=""
+            src={"next2.svg"}
+            alt={""}
+            width={500}
+            height={500}
+          />
         </div>
       </article>
       <article className="max-w-[88rem] m-auto pb-12  bg-black" id="features">
