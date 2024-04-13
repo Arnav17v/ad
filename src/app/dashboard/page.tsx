@@ -216,7 +216,7 @@ const DashboardPage = () => {
               <div>Slot wanted:{adreq.wslot}</div>
               <div>Teahcers wanted:{adreq.wteach}</div>
               <div>Course Name: {adreq.CN}</div>
-              <div>Interested Count: {interestedCount}</div>
+              {/* <div>Interested Count: {interestedCount}</div> */}
               <div className="element">
                 <Sheet>
                   <SheetTrigger className="border-none bg-[#111] p-2 mt-4">
