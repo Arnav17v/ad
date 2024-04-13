@@ -113,9 +113,7 @@ const DashboardPage = () => {
         const userData = userSnap.data();
 
         if (userData) {
-          // Check if the adreqid already exists in the Interest array
           if (!userData.Interest.includes(adreqid)) {
-            // If it doesn't exist, add it to the array
             await updateDoc(userRef, {
               Interest: arrayUnion(adreqid),
             });
@@ -243,7 +241,6 @@ const DashboardPage = () => {
                         }}
                       >
                         {isAdded[adreq.id] ? "Added" : "Add to Interest List"}{" "}
-                        // Change the button text based on the isAdded state
                       </Button>
                     </SheetHeader>
                   </SheetContent>
