@@ -261,14 +261,16 @@ const DashboardPage = () => {
                       <Button
                         className="bg-[#111] border-none p-2 rounded-xl m-2"
                         variant="secondary"
+                        disabled={isAdded[adreq.id]} // Disable the button if the interest is already added
                         onClick={async () => {
-                          setInterest((prevInterest: any) => [
-                            ...prevInterest,
-                            adreq.id,
-                          ]);
+                          const wasAdded = await addInterest(adreq.id);
+                          setIsAdded((prevState) => ({
+                            ...prevState,
+                            [adreq.id]: wasAdded,
+                          }));
                         }}
                       >
-                        Add to Interest List
+                        {isAdded[adreq.id] ? "Added" : "Add to Interest List"}{" "}
                       </Button>
                       <DrawerClose className="bg-[#111] border-none p-2 rounded-xl m-2">
                         Close
